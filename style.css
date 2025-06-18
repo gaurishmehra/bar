@@ -1,0 +1,91 @@
+/* Wayland Top Bar with Islands Styles */
+
+/* Main transparent bar */
+.topbar-transparent {
+    background-color: transparent;
+    padding: 0px;
+    min-height: 20px;
+    color: white;
+}
+
+/* Island base style */
+.island {
+    background-color: rgba(0, 0, 0, 0.2); /* Catppuccin Macchiato Base @ 50% */
+    border-radius: 10px;
+    padding: 6px 12px; /* Slightly reduced padding */
+    margin: 0 5px;
+    transition: all 0.2s ease;
+}
+
+/* Window background */
+window {
+    background-color: transparent;
+    padding: 0px;
+}
+
+/* Additional utility classes */
+.fade-in {
+    animation: fadeIn 0.3s ease-in;
+}
+
+/* Status indicators */
+.status-good { color: #a6e3a1; }
+.status-warning { color: #fab387; }
+.status-error { color: #f38ba8; }
+.status-info { color: #89b4fa; }
+
+/* General style for workspace buttons */
+.workspace-button {
+    padding: 2px 10px; /* Compact padding */
+    border: none;
+    background-image: none;
+    box-shadow: none;
+    text-shadow: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    min-height: 2px; /* Adjust as needed */
+    min-width: 10px;  /* Adjust as needed */
+    font-size: 10pt; 
+    border-radius: 10px; /* Default rounding, active will override for pill */
+}
+
+.workspace-button.active-workspace {
+    background-color: #FFFFFF; /* Bright white */
+    color: #1E1E2E;    /* Dark text (Catppuccin Base) */
+    font-weight: bold;
+    border-radius: 10px; /* Pill shape */
+    padding: 2px 10px; /* Adjusted padding for pill shape */
+}
+
+.workspace-button.inactive-workspace {
+    background-color: transparent;
+    color: white; /* Light text (Catppuccin Text) */
+    font-weight: normal;
+}
+
+/* Optional: Hover for inactive workspace buttons */
+.workspace-button.inactive-workspace:hover {
+    background-color: rgba(205, 214, 244, 0.8); /* Subtle hover (Catppuccin Text @ 10%) */
+    color: black;
+}
+.systray-island.island {
+    padding: 4px 8px; /* Slightly smaller padding for the systray island */
+}
+
+/* Style the buttons that hold each tray icon */
+.systray-island .systray-button {
+    padding: 2px;      /* Minimal padding around the icon */
+    min-height: 0;
+    min-width: 0;
+    border-radius: 6px; /* A smaller border-radius for the button hover effect */
+}
+
+/* Set the size of the icon itself */
+.systray-island image {
+    min-width: 18px;   /* Change this value to your desired icon size */
+    min-height: 18px;  /* Change this value to your desired icon size */
+}
+
+/* Optional: Add a subtle background on hover for visual feedback */
+.systray-island .systray-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
